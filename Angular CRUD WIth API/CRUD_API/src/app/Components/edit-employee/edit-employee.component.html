@@ -1,0 +1,41 @@
+<div class="container my-5">
+    <h2 class="mb-3">Add employee</h2>
+    <div class="row">
+        <div class="col-9">
+            <form #form="ngForm" (ngSubmit)="updateEmployee()">
+                <div class="mb-3">
+                  <label for="id" class="form-label">ID</label>
+                  <input type="text" placeholder="name" class="form-control" id="id"
+                  name="id" [(ngModel)] = "addEmploye.id" disabled>
+                </div>
+                <div class="mb-3">
+                    <label for="name" class="form-label">name</label>
+                    <input type="text" placeholder="name" class="form-control" id="name"
+                    name="name" [(ngModel)] = "addEmploye.name">
+                  </div>
+                <div class="mb-3">
+                    <label for="Email" class="form-label">Email</label>
+                    <input type="email" placeholder="email" class="form-control" id="email"
+                    name="email" [(ngModel)] = "addEmploye.email" >
+                  </div>
+                  <div class="mb-3">
+                    <label for="Phone" class="form-label">Phone</label>
+                    <input type="text" placeholder="Phone" class="form-control" id="phone"
+                    name="phone" [(ngModel)] = "addEmploye.phone">
+                  </div>
+                  <div class="mb-3">
+                    <label for="Salary" class="form-label">Salary</label>
+                    <input type="text" placeholder="salary" class="form-control" id="Salary"
+                    name="salary" [(ngModel)] = "addEmploye.salary">
+                  </div>
+                  <div class="mb-3">
+                    <label for="department" class="form-label">Department</label>
+                    <input type="text" placeholder="department" class="form-control" id="department"
+                    name="department" [(ngModel)] = "addEmploye.department">
+                  </div>
+                <button type="submit" class="btn btn-primary">Update</button>
+              </form>
+        </div>
+    </div>
+
+</div>

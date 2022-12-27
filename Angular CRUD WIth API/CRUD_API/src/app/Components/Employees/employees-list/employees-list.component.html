@@ -1,0 +1,36 @@
+<div class="container my-5">
+  <div class="row">
+    <div class="col-3">
+      <h1 class="mb-3">Employees</h1>
+    </div>
+    <div class="col-9">
+      <input type="search" class="form-control" placeholder="Enter Text" aria-label="Enter Text" aria-describedby="basic-addon1" [(ngModel)]="searchtexh">
+    </div>
+  </div>
+
+  <table class="table" *ngIf="employee && employee.length > 0">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Salary</th>
+        <th>Department</th>
+        <th>Options</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employe of employee | filter: searchtexh" >
+        <td>{{ employe.id }} </td>
+        <td>{{ employe.name }} </td>
+        <td>{{ employe.email }} </td>
+        <td>{{ employe.phone }} </td>
+        <td>{{ employe.salary }} </td>
+        <td>{{ employe.department }} </td>
+        <td> <a [routerLink]="['/employees','edit', employe.id ]">Edit</a> </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 *ngIf="!employee || employee.length <= 0">Employees nto found</h3>
+</div>
